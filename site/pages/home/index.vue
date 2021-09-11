@@ -89,6 +89,7 @@
 </template>
 
 <script>
+  import { getCodeImg } from "@/api/login";
   import "./index.scss";
   // import Logo from '../../assets/lixi-logo.png';
 
@@ -99,6 +100,11 @@
         pageName: "home",
         // Logo: Logo
       }
+    },
+    created () {
+      getCodeImg().then(res => {
+        console.log('res', res)
+      })
     }
   }
 </script>

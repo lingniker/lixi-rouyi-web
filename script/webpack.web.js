@@ -11,6 +11,11 @@ var config = {
   entry: [
     './site/index.js'
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(process.cwd() , './site')
+    }
+  },
   output: {
     // path: path.resolve(process.cwd() , './dist'),
     path: path.join(__dirname, "dist"),
@@ -117,7 +122,16 @@ var config = {
 
 var server = new WebpackDevServer(webpack(config),{
   contentBase: path.resolve(process.cwd() , './public'),
-
+  proxy: {
+    // detail: https://cli.vuejs.org/config/#devserver-proxy
+    '/dev-api': {
+      target: `http://localhost:8080`,
+      changeOrigin: true,
+      pathRewrite: {
+        '^/dev-api': ''
+      }
+    }
+  },
 });
 
 server.listen("8016",'0.0.0.0',(err)=>{
