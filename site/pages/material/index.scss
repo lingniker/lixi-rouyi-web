@@ -1,0 +1,41 @@
+.material.div {
+  width: calc(100vw - 0px);
+  height: calc(100vh - 100px);
+  position: relative;
+  .material-left {
+    position: absolute;
+    background: lightgreen;
+    width: 200px;
+    height: 100%;
+    .logo {
+      width: 120px;
+      height: 120px;
+      margin: 0px 40px;
+      background: url(./images/lixi-logo.png);
+      background-size: 120px 120px;
+    }
+    .material-li {
+      padding: 5px 15px;
+      a {
+        text-decoration: none;
+        font-size: 14px;
+        color: #444;
+        width: 100%;
+        display: inline-block;
+      }
+      .activeClass {
+        color: #fb6638;
+      }
+    }
+  }
+  .material-right.div {
+    margin-left: 200px;
+    height: 100%;
+    padding: 10px;
+    overflow-y: auto;
+    // @include scroll();
+    template{
+      display: block;
+    }
+  }
+}

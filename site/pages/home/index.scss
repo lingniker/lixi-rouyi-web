@@ -1,0 +1,200 @@
+.home{
+  margin-bottom: 10px;
+  .home-introduce{
+    .home-introduce-web{
+      display: flex;
+      .home-introduce-item{
+        width: 20%;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        font-weight: 600;
+        font-size: 28px;
+        background: url(./images/img1.jpg) no-repeat;
+        margin: 0px 10px;
+        background-size: 100% 100%;
+        border-radius: 10px;
+        color: #fb6638;
+        box-shadow: 10px 10px 5px #888888;
+        cursor: pointer;
+      }
+    }
+    .home-introduce-ui{
+      display: flex;
+      .home-introduce-item{
+        width: 20%;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        margin: 30px auto;
+        font-size: 28px;
+        font-weight: 600;
+        background: url(./images/img2.jpg) no-repeat;
+        background-size: 100% 100%;
+        border-radius: 10px;
+        color: #fb6638;
+        box-shadow: 10px 10px 5px #888888;
+        cursor: pointer;
+      }
+    }
+    .home-introduce-material{
+      display: flex;
+      .home-introduce-item{
+        width: 20%;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        font-size: 28px;
+        font-weight: 600;
+        background: url(./images/img3.jpg) no-repeat;
+        margin: 0px 10px;
+        background-size: 100% 100%;
+        border-radius: 10px;
+        color: #fb6638;
+        box-shadow: 10px 10px 5px #888888;
+        cursor: pointer;
+      }
+    }
+  }
+  .home-design{
+    // width: 100%;
+    padding: 0 0px 50px 0px;
+    margin: auto;
+    width: 1000px;
+    .home-design-title{
+      padding: 30px 20px;
+      font-size: 28px;
+      font-weight: 600;
+      text-shadow: 10px 10px 5px #888888;
+    }
+    .home-design-content{
+      display: flex;
+      .home-design-item{
+        width: 33%;
+        height: 200px;
+        text-align: center;
+        line-height: 100px;
+        font-size: 28px;
+        font-weight: 600;
+        background: url(./images/img4.jpg) no-repeat;
+        margin: 0px 20px;
+        background-size: 100% 100%;
+        border-radius: 10px;
+        color: #fb6638;
+        box-shadow: 10px 10px 5px #888888;
+        cursor: pointer;
+      }
+    }
+  }
+  .home-inner{
+    padding: 0 50px 50px 50px;
+    display: flex;
+    .home-inner-left{
+      width: 40%;
+      text-align: right;
+      padding-right: 20px;
+      .home-inner-logo{
+        width: 280px;
+        height: 280px;
+        display: inline-block;
+        background: url('./images/lixi-logo.png');
+        background-size: 100% 100%;
+      }
+    }
+    .home-inner-right{
+      width: 60%;
+      padding: 10px;
+      .home-inner-title{
+        font-size: 64px;
+      }
+      .home-inner-content{
+        font-size: 64px;
+      }
+      .home-inner-bottom{
+        padding: 10px;
+        .home-inner-quick{
+          display: inline-block;
+          padding: 10px 25px 10px 25px;
+          margin-right: 20px;
+          border-radius: 43px;
+          border: 1px solid #fb6638;
+          color: #fb6638;
+          cursor: pointer;
+        }
+        .home-inner-github{
+          display: inline-block;
+          padding: 10px 25px 10px 25px;
+          margin-right: 20px;
+          border-radius: 43px;
+          border: 1px solid #f6f6f6;
+          color: #273849;
+          background: #f6f6f6;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .home-gist{
+    margin: auto;
+    width: 1000px;
+    .home-gist-title1{
+      padding: 10px 20px;
+      font-size: 28px;
+      font-weight: 600;
+      text-shadow: 10px 10px 5px #888888;
+    }
+    .home-gist-content{
+      display: flex;
+      .home-gist-item{
+        width: 33%;
+        text-align: center;
+        border: 1px solid #fb663866;
+        margin: 10px 20px;
+        min-height: 40px;
+        line-height: 40px;
+        border-radius: 8px;
+        cursor: pointer;
+        &:hover{
+          border: 1px solid #fb6638aa;
+          box-shadow: 1px 2px 5px #888888;
+        }
+        .home-gist-wrap{
+          padding: 20px;
+          height: 274px;
+          .home-gist-img{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+          }
+          .home-gist-img-1{
+            background: url(./images/img1.jpg) no-repeat;
+            background-size: 100% 100%;
+          }
+          .home-gist-img-2{
+            background: url(./images/img2.jpg) no-repeat;
+            background-size: 100% 100%;
+          }
+          .home-gist-img-3{
+            background: url(./images/img3.jpg) no-repeat;
+            background-size: 100% 100%;
+          }
+          .home-gist-title{
+            font-size: 32px;
+            color: #fb6638;
+            padding: 10px 0px;
+          }
+          .home-gist-describe{
+            color: #999;
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+        .home-gist-bottom{
+          border-top: 1px solid #fb663866;
+          color: #666;
+        }
+      }
+    }
+  }
+}

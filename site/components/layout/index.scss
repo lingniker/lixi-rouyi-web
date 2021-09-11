@@ -1,0 +1,39 @@
+.lx-layout{
+  .lx-layout-header{
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 10px #888888;
+    .lx-layout-menu{
+      position: absolute;
+      top: 0px;
+      right: 17px;
+      
+      .lx-menu-ul{
+        display: flex;
+        .lx-menu-li{
+          padding: 0px 5px;
+        }
+      }
+    }
+
+  }
+  a{
+    color: #1f2f3d;
+  }
+  .active-menu{
+    color: #fb6638 !important;
+  }
+  .lx-layout-footer{
+    height: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #fb6638;
+    line-height: 30px;
+    a{
+      color: #337ab7;
+    }
+  }
+}
