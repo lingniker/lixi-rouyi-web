@@ -9,12 +9,13 @@ import ElementPlus from 'element-plus'
 // import LixiUiVue from '../src/index.js'
 import demoBlock from './components/demo-block/index.vue'
 import 'element-plus/dist/index.css'
+import store from './store/index'
 
 import './style/index.scss'
 
 var app = createApp(App);
 app.component('DemoBlock', demoBlock)
 
-app.use(router).use(Antd).use(ElementPlus);
+app.use(router).use(Antd).use(store).use(ElementPlus);
 
 app.mount('#app');

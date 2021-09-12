@@ -136,9 +136,7 @@ export default {
             Cookies.remove("password");
             Cookies.remove('rememberMe');
           }
-          console.log('loginForm4', this.$store)
           this.$store.dispatch("Login", this.loginForm).then(() => {
-            console.log('loginForm3', this.redirect)
             this.$router.push({ path: this.redirect || "/" }).catch(()=>{});
           }).catch((err) => {
             this.loading = false;
@@ -159,7 +157,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-image: url("../../../assets/images/login-background.jpg");
+  background-image: url("../../assets/images/login-background.jpg");
   background-size: cover;
 }
 .title {
