@@ -102,9 +102,9 @@
       }
     },
     created () {
-      getCodeImg().then(res => {
-        console.log('res', res)
-      })
+      // getCodeImg().then(res => {
+      //   console.log('res', res)
+      // })
     }
   }
 </script>

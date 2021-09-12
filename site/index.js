@@ -9,6 +9,13 @@ import ElementPlus from 'element-plus'
 // import LixiUiVue from '../src/index.js'
 import demoBlock from './components/demo-block/index.vue'
 import 'element-plus/dist/index.css'
+
+
+import './assets/styles/element-variables.scss'
+
+import '@/assets/styles/index.scss' // global css
+import '@/assets/styles/ruoyi.scss' // ruoyi css
+
 import store from './store/index'
 
 import './style/index.scss'
