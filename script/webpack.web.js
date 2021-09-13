@@ -14,7 +14,11 @@ var config = {
   resolve: {
     alias: {
       '@': path.resolve(process.cwd() , './site')
-    }
+    },
+    fallback: {
+      path: require.resolve('path-browserify')
+    },
+    extensions: ['.ts', '.tsx', '.js', '.vue', '.json']
   },
   output: {
     // path: path.resolve(process.cwd() , './dist'),
@@ -81,7 +85,12 @@ var config = {
           {
             loader: "css-loader",
             options: {
-              url: false
+              url: false,
+              // modules: {
+              //   localIdentName: '[name]__[local]--[hash:base64:5]',
+              //   // exportGlobals: true
+              // }
+              // https://blog.csdn.net/weixin_41819731/article/details/118161507
             }
           },
           'sass-loader'
@@ -116,7 +125,10 @@ var config = {
       filename: './index.html',
       favicon: './public/lixi-logo.png'
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new webpack.DefinePlugin({
+      "process.env": { VUE_APP_BASE_API: `'http://localhost:8080'` }
+    }),
   ]
 }
 

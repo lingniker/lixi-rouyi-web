@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { constantRoutes } from "@/router";
+// import { constantRoutes } from "@/router";
 
 export default {
   data() {
@@ -82,7 +82,8 @@ export default {
           childrenMenus.push(router.children[item]);
         }
       });
-      return constantRoutes.concat(childrenMenus);
+      return childrenMenus
+      // constantRoutes.concat(childrenMenus);
     },
     // 默认激活的菜单
     activeMenu() {
