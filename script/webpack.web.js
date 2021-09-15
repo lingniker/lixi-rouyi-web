@@ -87,6 +87,9 @@ var config = {
             options: {
               url: false,
               // modules: {
+              //   mode: "local",
+              // }
+              // modules: {
               //   localIdentName: '[name]__[local]--[hash:base64:5]',
               //   // exportGlobals: true
               // }
