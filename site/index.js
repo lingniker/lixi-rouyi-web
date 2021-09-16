@@ -8,6 +8,8 @@ import 'ant-design-vue/dist/antd.css';
 import ElementPlus from 'element-plus'
 // import LixiUiVue from '../src/index.js'
 import demoBlock from './components/demo-block/index.vue'
+import SvgIcon from '@/components/SvgIcon'// svg component
+
 import 'element-plus/dist/index.css'
 
 
@@ -22,6 +24,7 @@ import './style/index.scss'
 
 var app = createApp(App);
 app.component('DemoBlock', demoBlock)
+app.component('svg-icon', SvgIcon)
 
 app.use(router).use(Antd).use(store).use(ElementPlus);
 

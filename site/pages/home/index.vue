@@ -90,7 +90,7 @@
 
 <script>
   import { getCodeImg } from "@/api/login";
-  import "./index.scss";
+  // import "./index.scss";
   // import Logo from '../../assets/lixi-logo.png';
 
   export default {
