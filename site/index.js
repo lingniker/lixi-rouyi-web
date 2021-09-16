@@ -9,18 +9,14 @@ import ElementPlus from 'element-plus'
 // import LixiUiVue from '../src/index.js'
 import demoBlock from './components/demo-block/index.vue'
 import SvgIcon from '@/components/SvgIcon'// svg component
-
-import 'element-plus/dist/index.css'
-
-
-import './assets/styles/element-variables.scss'
-
-import '@/assets/styles/index.scss' // global css
-import '@/assets/styles/ruoyi.scss' // ruoyi css
-
 import store from './store/index'
 
+import 'element-plus/dist/index.css'
+import './assets/styles/element-variables.scss'
+import '@/assets/styles/index.scss' // global css
+import '@/assets/styles/ruoyi.scss' // ruoyi css
 import './style/index.scss'
+import './permission'
 
 var app = createApp(App);
 app.component('DemoBlock', demoBlock)

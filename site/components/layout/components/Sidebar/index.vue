@@ -29,6 +29,8 @@ import Logo from "./Logo";
 import SidebarItem from "./SidebarItem";
 import variables from "@/assets/styles/variables.js";
 
+console.log('mapGetters(["sidebarRouters", "sidebar"])', mapGetters(["sidebarRouters", "sidebar"]))
+
 export default {
     components: { SidebarItem, Logo },
     computed: {

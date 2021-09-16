@@ -13,7 +13,10 @@ export default {
     }
   },
   render(h, context) {
-    const { icon, title } = context.props
+    console.log('context', this.title)
+    var title = this.title
+    var icon = this.icon
+    // const { icon, title } = context.props
     const vnodes = []
 
     if (icon) {

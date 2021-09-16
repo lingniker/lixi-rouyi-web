@@ -227,6 +227,8 @@ export default {
       const validateFieldsKey = ['idCard', 'type', 'captcha', 'mobile', 'verifyCode']
       const mngValidateFieldsKey = [ 'userCode', 'password', 'captcha' ]
 
+      console.log('login')
+
       validateFields(this.isMng ? mngValidateFieldsKey : validateFieldsKey, { force: true }, (err, values) => {
         if (!err) {
           const loginParams = { ...values, captchaKey: this.captchaInfo.key };
@@ -247,20 +249,21 @@ export default {
       })
     },
     loginSuccess (res) {
-      // store.dispatch('GetInfo').then(res => {
-      //   this.$router.push({ path: this.isMng ? '/mng/dashboard' : '/' })
-      //   // 延迟 1 秒显示欢迎信息
-      //   setTimeout(() => {
-      //     this.$notification.success({
-      //       message: '欢迎',
-      //       description: `，欢迎回来`
-      //     })
-      //   }, 1000)
-      //   this.state.loginBtn = false
-      //   this.isLoginError = false
-      // }).catch(err => {
-      //   this.requestFailed(err, '获取用户信息错误')
-      // })
+      console.log('res store', res, store)
+      store.dispatch('GetInfo').then(res => {
+        this.$router.push({ path: this.isMng ? '/mng/dashboard' : '/' })
+        // 延迟 1 秒显示欢迎信息
+        setTimeout(() => {
+          this.$notification.success({
+            message: '欢迎',
+            description: `，欢迎回来`
+          })
+        }, 1000)
+        this.state.loginBtn = false
+        this.isLoginError = false
+      }).catch(err => {
+        this.requestFailed(err, '获取用户信息错误')
+      })
     },
     requestFailed (err, title) {
       this.isLoginError = true

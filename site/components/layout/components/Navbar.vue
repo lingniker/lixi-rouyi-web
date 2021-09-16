@@ -19,9 +19,9 @@
 
         <screenfull id="screenfull" class="right-menu-item hover-effect" />
 
-        <el-tooltip content="布局大小" effect="dark" placement="bottom">
-          <size-select id="size-select" class="right-menu-item hover-effect" />
-        </el-tooltip>
+        <!-- <el-tooltip content="布局大小" effect="dark" placement="bottom"> -->
+          <!-- <size-select id="size-select" class="right-menu-item hover-effect" /> -->
+        <!-- </el-tooltip> -->
 
       </template>
 
@@ -31,9 +31,9 @@
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown">
-          <router-link to="/user/profile">
+          <!-- <router-link to="/user/profile">
             <el-dropdown-item>个人中心</el-dropdown-item>
-          </router-link>
+          </router-link> -->
           <el-dropdown-item @click.native="setting = true">
             <span>布局设置</span>
           </el-dropdown-item>
