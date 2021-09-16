@@ -35,3 +35,14 @@
  }
 
 ```
+
+
+升级vue3.0 的问题
+
+1. 创建 createApp 不是 new Vue
+
+2. ruter addRouters 不存在
+
+3. #app 替代了 slot 
+
+4. store 的使用 router 的使用
