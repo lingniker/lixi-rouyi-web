@@ -15,6 +15,10 @@ import { getDicts } from "@/api/system/dict/data";
 import { getConfigKey } from "@/api/system/config";
 import Pagination from "@/components/Pagination";
 import directive from "@/directive/index";
+// 自定义表格工具组件
+import RightToolbar from "@/components/RightToolbar"
+// 字典标签组件
+import DictTag from '@/components/DictTag'
 
 import 'element-plus/dist/index.css'
 import './assets/styles/element-variables.scss'
@@ -28,6 +32,8 @@ directive(app)
 app.component('DemoBlock', demoBlock)
 app.component('svg-icon', SvgIcon)
 app.component('Pagination', Pagination)
+app.component('RightToolbar', RightToolbar)
+app.component('DictTag', DictTag)
 
 app.use(router).use(Antd).use(store).use(ElementPlus);
 
@@ -35,5 +41,8 @@ app.config.globalProperties.parseTime = parseTime
 app.config.globalProperties.addDateRange = addDateRange
 app.config.globalProperties.getDicts = getDicts
 app.config.globalProperties.getConfigKey = getConfigKey
+app.config.globalProperties.handleTree = handleTree
+app.config.globalProperties.resetForm = resetForm
+
 
 app.mount('#app');

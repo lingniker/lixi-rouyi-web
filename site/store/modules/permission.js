@@ -3,6 +3,8 @@ import { getRouters } from '@/api/menu'
 import Layout from '@/components/layout/index'
 
 import SystemUserIndex from '@/pages/system/user/index'
+import SystemRoleIndex from '@/pages/system/role/index'
+import SystemMenuIndex from '@/pages/system/Menu/index'
 // import ParentView from '@/components/ParentView';
 // import InnerLink from '@/layout/components/InnerLink'
 
@@ -111,7 +113,12 @@ function filterChildren(childrenMap, lastRouter = false) {
 export const loadView = (view) => { // 路由懒加载
   if ( view === 'system/user/index' ){
     return SystemUserIndex
+  } else if ( view === 'system/role/index') {
+    return SystemRoleIndex
+  }  else if (view === 'system/menu/index') {
+    return SystemMenuIndex
   }
+  
 }
 
 export default permission
