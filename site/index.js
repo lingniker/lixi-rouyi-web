@@ -14,6 +14,7 @@ import { parseTime, resetForm, addDateRange, selectDictLabel, selectDictLabels, 
 import { getDicts } from "@/api/system/dict/data";
 import { getConfigKey } from "@/api/system/config";
 import Pagination from "@/components/Pagination";
+import directive from "@/directive/index";
 
 import 'element-plus/dist/index.css'
 import './assets/styles/element-variables.scss'
@@ -23,6 +24,7 @@ import './style/index.scss'
 import './permission'
 
 var app = createApp(App);
+directive(app)
 app.component('DemoBlock', demoBlock)
 app.component('svg-icon', SvgIcon)
 app.component('Pagination', Pagination)
