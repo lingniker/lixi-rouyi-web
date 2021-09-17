@@ -147,20 +147,20 @@
           <el-table-column label="部门" align="center" key="deptName" prop="dept.deptName" v-if="columns[3].visible" :show-overflow-tooltip="true" />
           <el-table-column label="手机号码" align="center" key="phonenumber" prop="phonenumber" v-if="columns[4].visible" width="120" />
           <el-table-column label="状态" align="center" key="status" v-if="columns[5].visible">
-            <template #default="row">
+            <template #default={row}>
               <el-switch
                 v-model="row.status"
                 active-value="0"
                 inactive-value="1"
+                @change="() => { handleStatusChange(row) }"
               ></el-switch>
-                <!-- @change="() => { handleStatusChange(row) }" -->
             </template>
           </el-table-column>
           <el-table-column label="创建时间" align="center" prop="createTime" v-if="columns[6].visible" width="160">
-            <template #default="row">
+            <template #default={row}>
               <span>
-                {{ typeof row }}
-                <!-- {{ parseTime(row.createTime) }} -->
+                {{ row.userId }}
+                {{ parseTime(row.createTime) }}
               </span>
             </template>
           </el-table-column>
@@ -170,33 +170,38 @@
             width="160"
             class-name="small-padding fixed-width"
           >
-            <!-- <template #default="row" v-if="row.userId !== 1">
-              <el-button
-                size="mini"
-                type="text"
-                icon="el-icon-edit"
-                @click="handleUpdate(row)"
-                v-hasPermi="['system:user:edit']"
-              >修改</el-button>
-              <el-button
-                size="mini"
-                type="text"
-                icon="el-icon-delete"
-                @click="handleDelete(row)"
-                v-hasPermi="['system:user:remove']"
-              >删除</el-button>
-              <el-dropdown size="mini" @command="(command) => handleCommand(command, row)" v-hasPermi="['system:user:resetPwd', 'system:user:edit']">
-                <span class="el-dropdown-link">
-                  <i class="el-icon-d-arrow-right el-icon--right"></i>更多
-                </span>
-                <el-dropdown-menu slot="dropdown">
-                  <el-dropdown-item command="handleResetPwd" icon="el-icon-key"
-                    v-hasPermi="['system:user:resetPwd']">重置密码</el-dropdown-item>
-                  <el-dropdown-item command="handleAuthRole" icon="el-icon-circle-check"
-                    v-hasPermi="['system:user:edit']">分配角色</el-dropdown-item>
-                </el-dropdown-menu>
-              </el-dropdown>
-            </template> -->
+            <template #default={row} >
+              <div v-if="row.userId !== 1">
+                <el-button
+                  size="mini"
+                  type="text"
+                  icon="el-icon-edit"
+                  @click="handleUpdate(row)"
+                >修改</el-button>
+                  <!-- v-hasPermi="['system:user:edit']" -->
+                <el-button
+                  size="mini"
+                  type="text"
+                  icon="el-icon-delete"
+                  @click="handleDelete(row)"
+                >删除</el-button>
+                  <!-- v-hasPermi="['system:user:remove']" -->
+                  <!-- v-hasPermi="['system:user:resetPwd', 'system:user:edit']" -->
+                  <!-- v-hasPermi="['system:user:resetPwd']" -->
+                  <!-- v-hasPermi="['system:user:edit']" -->
+                <!-- <el-dropdown size="mini" @command="(command) => handleCommand(command, row)">
+                  <span class="el-dropdown-link">
+                    <i class="el-icon-d-arrow-right el-icon--right"></i>更多
+                  </span>
+                  <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item command="handleResetPwd" icon="el-icon-key"
+                     >重置密码</el-dropdown-item>
+                    <el-dropdown-item command="handleAuthRole" icon="el-icon-circle-check"
+                      >分配角色</el-dropdown-item>
+                  </el-dropdown-menu>
+                </el-dropdown> -->
+              </div>
+            </template>
           </el-table-column>
         </el-table>
 
@@ -592,22 +597,22 @@ export default {
     //     this.form.password = this.initPassword;
     //   });
     // },
-    // /** 修改按钮操作 */
-    // handleUpdate(row) {
-    //   this.reset();
-    //   this.getTreeselect();
-    //   const userId = row.userId || this.ids;
-    //   getUser(userId).then(response => {
-    //     this.form = response.data;
-    //     this.postOptions = response.posts;
-    //     this.roleOptions = response.roles;
-    //     this.form.postIds = response.postIds;
-    //     this.form.roleIds = response.roleIds;
-    //     this.open = true;
-    //     this.title = "修改用户";
-    //     this.form.password = "";
-    //   });
-    // },
+    /** 修改按钮操作 */
+    handleUpdate(row) {
+      this.reset();
+      this.getTreeselect();
+      const userId = row.userId || this.ids;
+      getUser(userId).then(response => {
+        this.form = response.data;
+        this.postOptions = response.posts;
+        this.roleOptions = response.roles;
+        this.form.postIds = response.postIds;
+        this.form.roleIds = response.roleIds;
+        this.open = true;
+        this.title = "修改用户";
+        this.form.password = "";
+      });
+    },
     // /** 重置密码按钮操作 */
     // handleResetPwd(row) {
     //   this.$prompt('请输入"' + row.userName + '"的新密码', "提示", {
@@ -647,20 +652,20 @@ export default {
     //     }
     //   });
     // },
-    // /** 删除按钮操作 */
-    // handleDelete(row) {
-    //   const userIds = row.userId || this.ids;
-    //   this.$confirm('是否确认删除用户编号为"' + userIds + '"的数据项?', "警告", {
-    //       confirmButtonText: "确定",
-    //       cancelButtonText: "取消",
-    //       type: "warning"
-    //     }).then(function() {
-    //       return delUser(userIds);
-    //     }).then(() => {
-    //       this.getList();
-    //       this.msgSuccess("删除成功");
-    //     }).catch(() => {});
-    // },
+    /** 删除按钮操作 */
+    handleDelete(row) {
+      const userIds = row.userId || this.ids;
+      this.$confirm('是否确认删除用户编号为"' + userIds + '"的数据项?', "警告", {
+          confirmButtonText: "确定",
+          cancelButtonText: "取消",
+          type: "warning"
+        }).then(function() {
+          return delUser(userIds);
+        }).then(() => {
+          this.getList();
+          this.msgSuccess("删除成功");
+        }).catch(() => {});
+    },
     // /** 导出按钮操作 */
     // handleExport() {
     //   const queryParams = this.queryParams;
