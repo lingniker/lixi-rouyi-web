@@ -46,3 +46,7 @@
 3. #app 替代了 slot 
 
 4. store 的使用 router 的使用
+
+5. 异步加载方式， 现在还没有用上vue3.0的加载方式.
+
+6. #default="row" 

@@ -13,7 +13,6 @@ export default {
     }
   },
   render(h, context) {
-    console.log('context', this.title)
     var title = this.title
     var icon = this.icon
     // const { icon, title } = context.props

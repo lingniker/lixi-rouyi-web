@@ -1,6 +1,8 @@
 // import { constantRoutes } from '@/router'
 import { getRouters } from '@/api/menu'
 import Layout from '@/components/layout/index'
+
+import SystemUserIndex from '@/pages/system/user/index'
 // import ParentView from '@/components/ParentView';
 // import InnerLink from '@/layout/components/InnerLink'
 
@@ -107,9 +109,8 @@ function filterChildren(childrenMap, lastRouter = false) {
 }
 
 export const loadView = (view) => { // 路由懒加载
-  console.log('view', view)
   if ( view === 'system/user/index' ){
-    return (resolve) => require([`@/pages/${view}`], resolve)
+    return SystemUserIndex
   }
 }
 
