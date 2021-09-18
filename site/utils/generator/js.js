@@ -1,6 +1,10 @@
-import { isArray } from 'util'
+// import { isArray } from 'util'
 import { exportDefault, titleCase } from '@/utils/index'
 import { trigger } from './config'
+
+function isArray (arr){
+  Array.isArray(a)
+}
 
 const units = {
   KB: '1024',

@@ -19,6 +19,8 @@ import directive from "@/directive/index";
 import RightToolbar from "@/components/RightToolbar"
 // 字典标签组件
 import DictTag from '@/components/DictTag'
+// 富文本组件
+import Editor from "@/components/Editor"
 
 import 'element-plus/dist/index.css'
 import './assets/styles/element-variables.scss'
@@ -34,6 +36,7 @@ app.component('svg-icon', SvgIcon)
 app.component('Pagination', Pagination)
 app.component('RightToolbar', RightToolbar)
 app.component('DictTag', DictTag)
+app.component('Editor', Editor)
 
 app.use(router).use(Antd).use(store).use(ElementPlus);
 
@@ -43,6 +46,7 @@ app.config.globalProperties.getDicts = getDicts
 app.config.globalProperties.getConfigKey = getConfigKey
 app.config.globalProperties.handleTree = handleTree
 app.config.globalProperties.resetForm = resetForm
+app.config.globalProperties.selectDictLabel = selectDictLabel
 
 
 app.mount('#app');
