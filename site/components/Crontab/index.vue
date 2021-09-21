@@ -1,11 +1,11 @@
 <template>
   <div>
     <el-tabs type="border-card">
-      <el-tab-pane label="秒" v-if="shouldHide('second')">
+      <!-- <el-tab-pane label="秒" v-if="shouldHide('second')">
         <CrontabSecond @update="updateCrontabValue" :check="checkNumber" ref="cronsecond" />
-      </el-tab-pane>
+      </el-tab-pane> -->
 
-      <el-tab-pane label="分钟" v-if="shouldHide('min')">
+      <!-- <el-tab-pane label="分钟" v-if="shouldHide('min')">
         <CrontabMin
           @update="updateCrontabValue"
           :check="checkNumber"
@@ -57,7 +57,7 @@
           :cron="crontabValueObj"
           ref="cronyear"
         />
-      </el-tab-pane>
+      </el-tab-pane> -->
     </el-tabs>
 
     <div class="popup-main">
@@ -96,7 +96,7 @@
           </tbody>
         </table>
       </div>
-      <CrontabResult :ex="crontabValueString"></CrontabResult>
+      <!-- <CrontabResult :ex="crontabValueString"></CrontabResult> -->
 
       <div class="pop_btn">
         <el-button size="small" type="primary" @click="submitFill">确定</el-button>
@@ -109,13 +109,13 @@
 
 <script>
 import CrontabSecond from "./second.vue";
-import CrontabMin from "./min.vue";
-import CrontabHour from "./hour.vue";
-import CrontabDay from "./day.vue";
-import CrontabMonth from "./month.vue";
-import CrontabWeek from "./week.vue";
-import CrontabYear from "./year.vue";
-import CrontabResult from "./result.vue";
+// import CrontabMin from "./min.vue";
+// import CrontabHour from "./hour.vue";
+// import CrontabDay from "./day.vue";
+// import CrontabMonth from "./month.vue";
+// import CrontabWeek from "./week.vue";
+// import CrontabYear from "./year.vue";
+// import CrontabResult from "./result.vue";
 
 export default {
   data() {
@@ -344,13 +344,13 @@ export default {
   },
   components: {
     CrontabSecond,
-    CrontabMin,
-    CrontabHour,
-    CrontabDay,
-    CrontabMonth,
-    CrontabWeek,
-    CrontabYear,
-    CrontabResult,
+    // CrontabMin,
+    // CrontabHour,
+    // CrontabDay,
+    // CrontabMonth,
+    // CrontabWeek,
+    // CrontabYear,
+    // CrontabResult,
   },
   watch: {
     expression: "resolveExp",

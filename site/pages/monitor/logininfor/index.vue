@@ -101,7 +101,7 @@
       <el-table-column label="操作系统" align="center" prop="os" />
       <el-table-column label="登录状态" align="center" prop="status">
         <template #default={row}>
-          <dict-tag :options="statusOptions" :value="row.status"/>
+          <lvm-dict-tag :options="statusOptions" :value="row.status"/>
         </template>
       </el-table-column>
       <el-table-column label="操作信息" align="center" prop="msg" />

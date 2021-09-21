@@ -162,7 +162,7 @@ export default {
       }
       return routes;
     },
-	ishttp(url) {
+	  ishttp(url) {
       return url.indexOf('http://') !== -1 || url.indexOf('https://') !== -1
     }
   },

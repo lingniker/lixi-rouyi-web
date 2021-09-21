@@ -196,7 +196,7 @@
           <el-col :span="24">
             <el-form-item label="cron表达式" prop="cronExpression">
               <el-input v-model="form.cronExpression" placeholder="请输入cron执行表达式">
-                <template slot="append">
+                <template #append>
                   <el-button type="primary" @click="handleShowCron">
                     生成表达式
                     <i class="el-icon-time el-icon--right"></i>
@@ -241,12 +241,12 @@
       </div>
     </el-dialog>
 
-    <el-dialog title="Cron表达式生成器" :visible.sync="openCron" append-to-body class="scrollbar">
+    <el-dialog title="Cron表达式生成器" v-model="openCron" append-to-body custom-class="scrollbar">
       <crontab @hide="openCron=false" @fill="crontabFill" :expression="expression"></crontab>
     </el-dialog>
 
     <!-- 任务日志详细 -->
-    <el-dialog title="任务详细" :visible.sync="openView" width="700px" append-to-body>
+    <el-dialog title="任务详细" v-model="openView" width="700px" append-to-body>
       <el-form ref="form" :model="form" label-width="120px" size="mini">
         <el-row>
           <el-col :span="12">

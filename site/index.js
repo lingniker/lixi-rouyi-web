@@ -22,6 +22,8 @@ import DictTag from '@/components/DictTag'
 // 富文本组件
 import Editor from "@/components/Editor"
 
+import { LRM } from "../material/index"
+
 import 'element-plus/dist/index.css'
 import './assets/styles/element-variables.scss'
 import '@/assets/styles/index.scss' // global css
@@ -38,7 +40,7 @@ app.component('RightToolbar', RightToolbar)
 app.component('DictTag', DictTag)
 app.component('Editor', Editor)
 
-app.use(router).use(Antd).use(store).use(ElementPlus);
+app.use(router).use(Antd).use(store).use(ElementPlus).use(LRM);
 
 app.config.globalProperties.parseTime = parseTime
 app.config.globalProperties.addDateRange = addDateRange
