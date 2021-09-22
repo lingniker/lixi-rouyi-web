@@ -6,7 +6,7 @@
 // import Button from '../../lixi-rouyi-material/src/components/button/doc/index.vue'
 // import Tree from '../../lixi-rouyi-material/src/components/tree/doc/index.vue'
 
-import LRM from "./project/lixi-rouyi-material/src/index"
+// import LRM from "./project/lixi-rouyi-material/src/index"
 
 // var douRouter = [
 //   {
@@ -30,7 +30,7 @@ var materialConfig = [
   }
 ]
 
-export { LRM };
+// export { LRM };
  
 
 export default materialConfig;
