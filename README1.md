@@ -58,6 +58,8 @@
 
 6. #default={row}
 
+7. ::v-deep
+
 ### todo list
 
 #### 一期
@@ -125,6 +127,4 @@
 17. xss 攻击
 
 18. babel,es6,commont amd,umd
-
-
 

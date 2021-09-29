@@ -128,7 +128,7 @@ function filterChildren(childrenMap, lastRouter = false) {
 }
 
 export const loadView = (view) => { // 路由懒加载
-  console.log('view---->', view)
+  // console.log('view---->', view)
   if ( view === 'system/user/index' ){
     return SystemUserIndex
   } else if ( view === 'system/role/index') {

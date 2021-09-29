@@ -140,7 +140,7 @@ var server = new WebpackDevServer(webpack(config),{
   proxy: {
     // detail: https://cli.vuejs.org/config/#devserver-proxy
     '/dev-api': {
-      target: `http://localhost:8080`,
+      target: `http://121.5.123.5:8080`,
       changeOrigin: true,
       pathRewrite: {
         '^/dev-api': ''
@@ -149,9 +149,9 @@ var server = new WebpackDevServer(webpack(config),{
   },
 });
 
-server.listen("8016",'0.0.0.0',(err)=>{
+server.listen("8023",'0.0.0.0',(err)=>{
   if(!err){
-    console.log('http://localhost:8016')
+    console.log('http://localhost:8023')
   } else {
     console.log('err', err);
   }
