@@ -38,6 +38,7 @@ function genInlineComponentText(template, script) {
     source: `<div>${source}</div>`,
     filename: 'inline-component', // TODO：这里有待调整
     compiler: TemplateCompiler,
+    id: 'a',
     compilerOptions: {
       mode: 'function',
     },
