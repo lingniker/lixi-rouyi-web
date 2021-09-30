@@ -18,6 +18,15 @@ var config = {
       arrowFunction: false
     }
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(process.cwd() , './site')
+    },
+    fallback: {
+      path: require.resolve('path-browserify')
+    },
+    extensions: ['.ts', '.tsx', '.js', '.vue', '.json']
+  },
   module: {
     rules: [
       {
