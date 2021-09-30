@@ -106,3 +106,7 @@ dist
 material/project/*
 
 lib/
+
+server/public/*
+
+!.gitkeep
