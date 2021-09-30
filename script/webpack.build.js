@@ -118,6 +118,9 @@ var config = {
       filename: './index.html',
       favicon: './public/lixi-logo.png'
     }),
+    new webpack.DefinePlugin({
+      "process.env": { VUE_APP_BASE_API: `'http://121.5.123.5:8080'` }
+    }),
     new VueLoaderPlugin()
   ]
 }
