@@ -2,10 +2,11 @@ var path = require("path");
 var webpack = require("webpack");
 
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { VueLoaderPlugin, default: loader } = require('vue-loader');
 
 var config = {
-  mode:"development",
+  mode:"production",
   entry: [
     './site/index.js'
   ],
@@ -121,7 +122,8 @@ var config = {
     new webpack.DefinePlugin({
       "process.env": { VUE_APP_BASE_API: `'http://121.5.123.5:8080'` }
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new BundleAnalyzerPlugin()
   ]
 }
 

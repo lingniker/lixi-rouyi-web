@@ -195,16 +195,16 @@ export default {
 </script>
 <style scoped lang="scss">
 // .el-upload--picture-card 控制加号部分
-::v-deep(.hide) .el-upload--picture-card {
+:v-deep(.hide .el-upload--picture-card) {
     display: none;
 }
 // 去掉动画效果
-::v-deep(.el-list-enter-active),
-::v-deep(.el-list-leave-active) {
+:v-deep(.el-list-enter-active),
+:v-deep(.el-list-leave-active) {
     transition: all 0s;
 }
 
-::v-deep(.el-list-enter), .el-list-leave-active {
+:v-deep(.el-list-enter, .el-list-leave-active) {
     opacity: 0;
     transform: translateY(0);
 }

@@ -69,13 +69,14 @@
     "vuedraggable": "^2.24.3",
     "vuex": "^4.0.2",
     "webpack": "^5.46.0",
+    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "ant-design-vue": "^2.2.6",
     "element-plus": "^1.1.0-beta.9",
     "fuse.js": "^6.4.6",
     "jsencrypt": "^3.0.0-rc.1",
+    "lixi-ui-vue": "0.0.6",
     "markdown-it": "^12.1.0",
     "markdown-it-anchor": "^8.1.2",
     "markdown-it-chain": "^1.3.0",

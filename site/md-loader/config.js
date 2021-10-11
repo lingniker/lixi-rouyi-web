@@ -8,7 +8,7 @@ const config = new Config();
 config
   .options.html(true).end().plugin("anchor").use(anchorPlugin,[{
     level: 2,
-    permalink: true,
+    // permalink: true,
     permalinkBefore: true,
   }]).end()
   .plugin('containers').use(containers).end()
