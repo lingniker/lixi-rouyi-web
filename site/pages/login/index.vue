@@ -1,40 +1,42 @@
 <template>
   <div class="login">
-    <lx-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
-      <h3 class="title">若依后台管理系统</h3>
-      <lx-form-item prop="username">
-        <lx-input v-model="loginForm.username" type="text" auto-complete="off" placeholder="账号">
-          <svg-icon slot="prefix" icon-class="user" class="lx-input__icon input-icon" />
-        </lx-input>
-      </lx-form-item>
-      <lx-form-item prop="password">
-        <lx-input
+    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
+      <h3 class="title">lixi后台管理系统</h3>
+      <!-- <lx-button>按钮</lx-button> -->
+      <!-- <Button>按钮</Button> -->
+      <el-form-item prop="username">
+        <el-input v-model="loginForm.username" type="text" auto-complete="off" placeholder="账号">
+          <svg-icon slot="prefix" icon-class="user" class="el-input__icon input-icon" />
+        </el-input>
+      </el-form-item>
+      <el-form-item prop="password">
+        <el-input
           v-model="loginForm.password"
           type="password"
           auto-complete="off"
           placeholder="密码"
           @keyup.enter.native="handleLogin"
         >
-          <svg-icon slot="prefix" icon-class="password" class="lx-input__icon input-icon" />
-        </lx-input>
-      </lx-form-item>
-      <lx-form-item prop="code" v-if="captchaOnOff">
-        <lx-input
+          <svg-icon slot="prefix" icon-class="password" class="el-input__icon input-icon" />
+        </el-input>
+      </el-form-item>
+      <el-form-item prop="code" v-if="captchaOnOff">
+        <el-input
           v-model="loginForm.code"
           auto-complete="off"
           placeholder="验证码"
           style="width: 63%"
           @keyup.enter.native="handleLogin"
         >
-          <svg-icon slot="prefix" icon-class="validCode" class="lx-input__icon input-icon" />
-        </lx-input>
+          <svg-icon slot="prefix" icon-class="validCode" class="el-input__icon input-icon" />
+        </el-input>
         <div class="login-code">
           <img :src="codeUrl" @click="getCode" class="login-code-img"/>
         </div>
-      </lx-form-item>
-      <lx-checkbox v-model="loginForm.rememberMe" style="margin:0px 0px 25px 0px;">记住密码</lx-checkbox>
-      <lx-form-item style="width:100%;">
-        <lx-button
+      </el-form-item>
+      <el-checkbox v-model="loginForm.rememberMe" style="margin:0px 0px 25px 0px;">记住密码</el-checkbox>
+      <el-form-item style="width:100%;">
+        <el-button
           :loading="loading"
           size="medium"
           type="primary"
@@ -43,14 +45,14 @@
         >
           <span v-if="!loading">登 录</span>
           <span v-else>登 录 中...</span>
-        </lx-button>
+        </el-button>
         <div style="float: right;" v-if="register">
           <router-link class="link-type" :to="'/register'">立即注册</router-link>
         </div>
-      </lx-form-item>
-    </lx-form>
+      </el-form-item>
+    </el-form>
     <!--  底部  -->
-    <div class="lx-login-footer">
+    <div class="el-login-footer">
       <span>Copyright © 2021-2021 lingyuanping All Rights Reserved.</span>
     </div>
   </div>
@@ -59,10 +61,15 @@
 <script>
 import { getCodeImg } from "@/api/login";
 import Cookies from "js-cookie";
-import { encrypt, decrypt } from '@/utils/jsencrypt'
+import { encrypt, decrypt } from '@/utils/jsencrypt';
+
+// import Button from '../../../lib/cjs/button'
 
 export default {
   name: "Login",
+  components: {
+    // Button
+  },
   data() {
     return {
       codeUrl: "",
@@ -171,7 +178,7 @@ export default {
   background: #ffffff;
   width: 400px;
   padding: 25px 25px 5px 25px;
-  .lx-input {
+  .el-input {
     height: 38px;
     input {
       height: 38px;
@@ -197,14 +204,14 @@ export default {
     vertical-align: middle;
   }
 }
-.lx-login-footer {
+.el-login-footer {
   height: 40px;
   line-height: 40px;
   position: fixed;
   bottom: 0;
   width: 100%;
   text-align: center;
-  // color: #fff;
+  color: #fff;
   font-family: Arial;
   font-size: 12px;
   letter-spacing: 1px;

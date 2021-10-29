@@ -2,8 +2,18 @@ var path = require("path");
 var webpack = require("webpack");
 
 var HtmlWebpackPlugin = require("html-webpack-plugin");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { VueLoaderPlugin, default: loader } = require('vue-loader');
+
+// let externals = [
+//   {
+//     vue: {
+//       root: 'Vue',
+//       commonjs: 'vue',
+//       commonjs2: 'vue',
+//     },
+//   }
+// ]
 
 var config = {
   mode:"production",
@@ -123,8 +133,9 @@ var config = {
       "process.env": { VUE_APP_BASE_API: `'http://121.5.123.5:8080'` }
     }),
     new VueLoaderPlugin(),
-    new BundleAnalyzerPlugin()
-  ]
+    // new BundleAnalyzerPlugin()
+  ],
+  // externals
 }
 
 

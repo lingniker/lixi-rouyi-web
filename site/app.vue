@@ -1,21 +1,18 @@
 <template>
-  <div>
     <router-view></router-view>
-  </div>
 </template>
 
 <script>
 import test from './test.jsx';
 import TestX from './test.tsx';
 
-import Layout from './components/layout/index.vue'
+// import Layout from './components/layout/index.vue'
 // import { use } from '../src/i18n/index';
 
 export default {
   components: {
     Test: test,
-    TestX,
-    Layout
+    TestX
   },
   data() {
     return {

@@ -1,13 +1,12 @@
 import { createApp } from 'vue';
 
 import router from './router/index.js';
-// import Antd from 'ant-design-vue';
 import App from "./app.vue";
 // import 'ant-design-vue/dist/antd.css';
 // import Button from '../src/components/button/package/index.js';
 import ElementPlus from 'element-plus'
 // import LixiUiVue from '../lib/index.js'
-import LixiUiVue from 'lixi-ui-vue'
+// import LixiUiVue from 'lixi-ui-vue'
 
 // import LixiUiVue from '../src/index.js'
 import demoBlock from './components/demo-block/index.vue'
@@ -43,8 +42,8 @@ app.component('RightToolbar', RightToolbar)
 app.component('DictTag', DictTag)
 app.component('Editor', Editor)
 
-// .use(LRM)
-app.use(router).use(store).use(LixiUiVue).use(ElementPlus);
+// .use(LRM).use(LixiUiVue)
+app.use(store).use(router).use(ElementPlus);
 
 app.config.globalProperties.parseTime = parseTime
 app.config.globalProperties.addDateRange = addDateRange
