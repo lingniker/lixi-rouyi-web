@@ -2,25 +2,23 @@
 import { getRouters } from '@/api/menu'
 import Layout from '@/components/layout/index'
 
-import SystemUserIndex from '@/pages/system/user/index'
-import SystemRoleIndex from '@/pages/system/role/index'
-import SystemMenuIndex from '@/pages/system/menu/index'
-import SystemDeptIndex from '@/pages/system/dept/index'
-import SystemPostIndex from '@/pages/system/post/index'
-import SystemDictIndex from '@/pages/system/dict/index'
-import SystemConfigIndex from '@/pages/system/config/index'
-import SystemNoticeIndex from '@/pages/system/notice/index'
-import SystemLogOperlogIndex from '@/pages/monitor/operlog/index'
-import SystemLogininfoIndex from '@/pages/monitor/logininfor/index'
-import MonitorOnlineIndex from '@/pages/monitor/online/index'
-import MonitorJobIndex from '@/pages/monitor/job/index'
-import MonitorServerIndex from '@/pages/monitor/server/index'
-import MonitorCacheIndex from '@/pages/monitor/cache/index'
-import ToolBuildIndex from '@/pages/tool/build/index'
-import ToolSwaggerIndex from '@/pages/tool/swagger/index'
-import ToolGenIndex from '@/pages/tool/gen/index'
-
-
+// import SystemUserIndex from '@/pages/system/user/index'
+// import SystemRoleIndex from '@/pages/system/role/index'
+// import SystemMenuIndex from '@/pages/system/menu/index'
+// import SystemDeptIndex from '@/pages/system/dept/index'
+// import SystemPostIndex from '@/pages/system/post/index'
+// import SystemDictIndex from '@/pages/system/dict/index'
+// import SystemConfigIndex from '@/pages/system/config/index'
+// import SystemNoticeIndex from '@/pages/system/notice/index'
+// import SystemLogOperlogIndex from '@/pages/monitor/operlog/index'
+// import SystemLogininfoIndex from '@/pages/monitor/logininfor/index'
+// import MonitorOnlineIndex from '@/pages/monitor/online/index'
+// import MonitorJobIndex from '@/pages/monitor/job/index'
+// import MonitorServerIndex from '@/pages/monitor/server/index'
+// import MonitorCacheIndex from '@/pages/monitor/cache/index'
+// import ToolBuildIndex from '@/pages/tool/build/index'
+// import ToolSwaggerIndex from '@/pages/tool/swagger/index'
+// import ToolGenIndex from '@/pages/tool/gen/index'
 
 // import ParentView from '@/components/ParentView';
 // import InnerLink from '@/layout/components/InnerLink'
@@ -130,39 +128,58 @@ function filterChildren(childrenMap, lastRouter = false) {
 export const loadView = (view) => { // 路由懒加载
   // console.log('view---->', view)
   if ( view === 'system/user/index' ){
-    return SystemUserIndex
+    // return SystemUserIndex
+    // return (resolve) => require([`@/pages/system/user/index`], resolve)
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/system/user/index.vue`)
   } else if ( view === 'system/role/index') {
-    return SystemRoleIndex
+    // return SystemRoleIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/system/role/index.vue`)
   }  else if (view === 'system/menu/index') {
-    return SystemMenuIndex
+    // return SystemMenuIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/system/menu/index.vue`)
   } else if (view === 'system/dept/index') {
-  return SystemDeptIndex
+    // return SystemDeptIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/system/dept/index.vue`)
+
   } else if (view === 'system/post/index') {
-    return SystemPostIndex
+    // return SystemPostIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/system/post/index.vue`)
   } else if (view === 'system/dict/index') {
-    return SystemDictIndex
+    // return SystemDictIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/system/dict/index.vue`)
   } else if (view === 'system/config/index') {
-    return SystemConfigIndex
+    // return SystemConfigIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/system/config/index.vue`)
   } else if (view === 'system/notice/index') {
-    return SystemNoticeIndex
+    // return SystemNoticeIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/system/notice/index.vue`)
   } else if (view === 'monitor/operlog/index') {
-    return SystemLogOperlogIndex
+    // return SystemLogOperlogIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/monitor/operlog/index.vue`)
   } else if (view === 'monitor/logininfor/index') {
-    return SystemLogininfoIndex
+    // return SystemLogininfoIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/monitor/logininfor/index.vue`)
   } else if (view === 'monitor/online/index') {
-    return MonitorOnlineIndex
+    // return MonitorOnlineIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/monitor/online/index.vue`)
   } else if (view === 'monitor/job/index') {
-    return MonitorJobIndex
+    // return MonitorJobIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/monitor/job/index.vue`)
   } else if (view === 'monitor/server/index') {
-    return MonitorServerIndex
+    // return MonitorServerIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/monitor/server/index.vue`)
   } else if (view === 'monitor/cache/index') {
-    return MonitorCacheIndex
+    // return MonitorCacheIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/monitor/cache/index.vue`)
   } else if (view === 'tool/build/index') {
-    return ToolBuildIndex
+    // return ToolBuildIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/tool/build/index.vue`)
   } else if (view === 'tool/swagger/index') {
-    return ToolSwaggerIndex
+    // return ToolSwaggerIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/tool/swagger/index.vue`)
   } else if (view === 'tool/gen/index') {
-    return ToolGenIndex
+    // return ToolGenIndex
+    return () => import(/* webpackChunkName: "doc" */ `@/pages/tool/gen/index.vue`)
   }
 }
 

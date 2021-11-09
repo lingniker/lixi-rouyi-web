@@ -4,6 +4,7 @@ var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { VueLoaderPlugin, default: loader } = require('vue-loader');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // let externals = [
 //   {
@@ -24,7 +25,7 @@ var config = {
     path: path.resolve(process.cwd() , './dist'),
     // path: path.join(__dirname, "dist"),
     filename: 'index.js',
-    publicPath: '/',
+    publicPath: '/ruoyi/',
     environment: {
       arrowFunction: false
     }
@@ -90,7 +91,7 @@ var config = {
       {
         test: /\.(scss|css)$/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -132,6 +133,10 @@ var config = {
     new webpack.DefinePlugin({
       "process.env": { VUE_APP_BASE_API: `'http://121.5.123.5:8080'` }
     }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
     new VueLoaderPlugin(),
     // new BundleAnalyzerPlugin()
   ],
@@ -139,7 +144,7 @@ var config = {
 }
 
 
-webpack(config, function(err) {
+webpack(config, function(err, data) {
   if(err){
     console.log(err)
   } else {
