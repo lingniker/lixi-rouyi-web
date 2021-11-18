@@ -18,7 +18,7 @@
             size="mini"
             icon="el-icon-cloudy"
             plain
-            @click="goTarget('https://gitee.com/y_project/RuoYi-Vue')"
+            @click="goTarget('https://github.com/lixi-ui/lixi-ui-vue')"
             >访问码云</el-button
           >
           <el-button

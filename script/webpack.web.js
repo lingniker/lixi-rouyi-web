@@ -13,6 +13,7 @@ var config = {
   ],
   resolve: {
     alias: {
+      'vue': path.resolve(__dirname, '../node_modules/vue/dist/vue.esm-browser.js'),
       '@': path.resolve(process.cwd() , './site')
     },
     fallback: {
@@ -101,6 +102,7 @@ var config = {
       },
       {
         test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
+        exclude: [path.join(__dirname , '../site/assets/icons')],
         use: [
           {
             loader: 'url-loader',
@@ -118,6 +120,18 @@ var config = {
           //     esModule: false
           //   }
           // },
+        ]
+      },
+      {
+        test: /\.svg$/,
+        include: [path.join(__dirname , '../site/assets/icons')],
+        use: [
+          {
+            loader: 'svg-sprite-loader',
+            options: {
+              symbolId: 'icon-[name]'
+            }
+          },
         ]
       }
     ]

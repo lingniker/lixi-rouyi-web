@@ -9,15 +9,17 @@
       <template v-if="device!=='mobile'">
         <search id="header-search" class="right-menu-item" />
         
-        <el-tooltip content="源码地址" effect="dark" placement="bottom">
+        <!-- <el-tooltip content="源码地址" effect="dark" placement="bottom">
           <ruo-yi-git id="ruoyi-git" class="right-menu-item hover-effect" />
-        </el-tooltip>
+        </el-tooltip> -->
 
         <el-tooltip content="文档地址" effect="dark" placement="bottom">
           <ruo-yi-doc id="ruoyi-doc" class="right-menu-item hover-effect" />
         </el-tooltip>
 
-        <screenfull id="screenfull" class="right-menu-item hover-effect" />
+        <!-- <screenfull id="screenfull" class="right-menu-item hover-effect" /> -->
+
+        <lv-screenfull class="right-menu-item hover-effect" />
 
         <!-- <el-tooltip content="布局大小" effect="dark" placement="bottom"> -->
           <!-- <size-select id="size-select" class="right-menu-item hover-effect" /> -->
@@ -25,23 +27,23 @@
 
       </template>
 
-      <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
+      <!-- <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
           <img :src="avatar" class="user-avatar">
           <i class="el-icon-caret-bottom" />
         </div>
-        <el-dropdown-menu slot="dropdown">
+        <el-dropdown-menu slot="dropdown"> -->
           <!-- <router-link to="/user/profile">
             <el-dropdown-item>个人中心</el-dropdown-item>
           </router-link> -->
-          <el-dropdown-item @click.native="setting = true">
+          <!-- <el-dropdown-item @click.native="setting = true">
             <span>布局设置</span>
           </el-dropdown-item>
           <el-dropdown-item divided @click.native="logout">
             <span>退出登录</span>
           </el-dropdown-item>
         </el-dropdown-menu>
-      </el-dropdown>
+      </el-dropdown> -->
     </div>
   </div>
 </template>
